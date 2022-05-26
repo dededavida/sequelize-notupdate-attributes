@@ -1,5 +1,5 @@
 import { factory } from 'factory-girl';
-import { DataTypes, Model, Optional, Sequelize } from 'sequelize';
+import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Sequelize, Model } from 'sequelize';
 import Chance from "chance";
 import sequelizeNoUpdate from '../index';
 
@@ -9,34 +9,35 @@ const sequelize = new Sequelize('sqlite::memory:', {
 
 sequelizeNoUpdate(sequelize);
 
-interface UserAttributes {
-  id: string;
-  attr1: string;
-  attr2: string;
-  attr3: string;
-}
-
-class Model_1 extends Model<UserAttributes, Optional<UserAttributes, 'id'>> {
-  declare id: string;
+class Model_1 extends Model<InferAttributes<Model_1, {}>, InferCreationAttributes<Model_1, { omit: 'id' }>> {
+  declare id: CreationOptional<number>;
   declare attr1: string;
   declare attr2: string;
   declare attr3: string;
 }
 Model_1.init({
-  id: DataTypes.STRING,
+  id: {
+    type: DataTypes.INTEGER.UNSIGNED,
+    autoIncrement: true,
+    primaryKey: true
+  },
   attr1: DataTypes.STRING,
   attr2: DataTypes.STRING,
   attr3: DataTypes.STRING,
 }, {sequelize})
 
-class Model_2 extends Model<UserAttributes, Optional<UserAttributes, 'id'>> {
-  declare id: string;
+class Model_2 extends Model<InferAttributes<Model_2, {}>, InferCreationAttributes<Model_2, { omit: 'id' }>> {
+  declare id: CreationOptional<number>;
   declare attr1: string;
   declare attr2: string;
   declare attr3: string;
 }
 Model_2.init({
-  id: DataTypes.STRING,
+  id: {
+    type: DataTypes.INTEGER.UNSIGNED,
+    autoIncrement: true,
+    primaryKey: true
+  },
   attr1: {
     type: DataTypes.STRING,
     noUpdate: true,
@@ -48,14 +49,18 @@ Model_2.init({
   attr3: DataTypes.STRING,
 }, { sequelize })
 
-class Model_3 extends Model<UserAttributes, Optional<UserAttributes, 'id'>> {
-  declare id: string;
+class Model_3 extends Model<InferAttributes<Model_3, {}>, InferCreationAttributes<Model_3, { omit: 'id' }>> {
+  declare id: CreationOptional<number>;
   declare attr1: string;
   declare attr2: string;
   declare attr3: string;
 }
 Model_3.init({
-  id: DataTypes.STRING,
+  id: {
+    type: DataTypes.INTEGER.UNSIGNED,
+    autoIncrement: true,
+    primaryKey: true
+  },
   attr1: {
     type: DataTypes.STRING,
     noUpdate: {
