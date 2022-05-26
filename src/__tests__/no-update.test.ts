@@ -17,7 +17,7 @@ class Model_1 extends Model<InferAttributes<Model_1, {}>, InferCreationAttribute
 }
 Model_1.init({
   id: {
-    type: DataTypes.INTEGER.UNSIGNED,
+    type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
   },
@@ -34,7 +34,7 @@ class Model_2 extends Model<InferAttributes<Model_2, {}>, InferCreationAttribute
 }
 Model_2.init({
   id: {
-    type: DataTypes.INTEGER.UNSIGNED,
+    type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
   },
@@ -57,7 +57,7 @@ class Model_3 extends Model<InferAttributes<Model_3, {}>, InferCreationAttribute
 }
 Model_3.init({
   id: {
-    type: DataTypes.INTEGER.UNSIGNED,
+    type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
   },

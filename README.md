@@ -1,4 +1,4 @@
-# sequelize-noupdate-attributes
+# sequelize-notupdate-attributes
 
 A very simple [Sequelize](https://github.com/sequelize/sequelize) plugin which adds **no update** and **readonly** attributes support. Compatible with sequelize v6.
 
@@ -13,7 +13,7 @@ Have previously installed the `sequelize` package in the project.
 ## Install
 
 ```sh
-yarn add -D sequelize-noupdate-attributes
+yarn add -D sequelize-notupdate-attributes
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ Add the plugin to the sequelize instance and then set the noupdate
 properties in your models, as shown in the basic example below:
 
 ```js
-var sequelizeNoUpdateAttributes = require('sequelize-noupdate-attributes');
+var sequelizeNoUpdateAttributes = require('sequelize-notupdate-attributes');
 
 var sequelize = new Sequelize('database', 'user', 'password');
 sequelizeNoUpdateAttributes(sequelize); // Note that is the `sequelize` instance the passed reference.
@@ -76,8 +76,8 @@ when the record is new.
 
 ## Issues
 
-The source is available for download from [GitHub](https://github.com/daviddossantos/sequelize-noupdate-attributes)
-and there is a [issue tracker](https://github.com/daviddossantos/sequelize-noupdate-attributes/issues) so you can report bugs there.
+The source is available for download from [GitHub](https://github.com/daviddossantos/sequelize-notupdate-attributes)
+and there is a [issue tracker](https://github.com/daviddossantos/sequelize-notupdate-attributes/issues) so you can report bugs there.
 
 ## Tests
 

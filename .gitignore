@@ -31,4 +31,5 @@ node_modules
 .directory
 .idea
 
+# build artifact
 lib/
