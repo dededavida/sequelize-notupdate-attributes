@@ -92,6 +92,20 @@ factory.define('Model_3', Model_3, {
   attr3: chance.name(),
 });
 
+describe('sequelizeNoUpdate()', () => {
+  test('should not throw an error if sequelize is passed as the first arguement', () => {
+    const sequelize = new Sequelize('sqlite::memory:');
+    sequelizeNoUpdate(sequelize);
+  })
+  test('should throw an error if no sequelize object is passed', () => {
+      const t = () => {
+        // @ts-ignore
+        sequelizeNoUpdate();
+      };
+      expect(t).toThrow(new Error('The required sequelize instance option is missing'));
+  })
+})
+
 describe('if `noUpdate`', () => {
   beforeAll(() => {
     return sequelize.sync({
